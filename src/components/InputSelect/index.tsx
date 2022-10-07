@@ -84,13 +84,37 @@ export function InputSelect<TItem>({
           }
 
           if (isLoading) {
+            if (items.length !== 0){
+              return items.map((item, index) => {
+                const parsedItem = parseItem(item)
+                return (
+                  <div
+                    key={parsedItem.value}
+                    {...getItemProps({
+                      key: parsedItem.value,
+                      index,
+                      item,
+                      className: classNames("RampInputSelect--dropdown-item", {
+                        "RampInputSelect--dropdown-item-highlighted": highlightedIndex === index,
+                        "RampInputSelect--dropdown-item-selected":
+                          parsedSelectedItem?.value === parsedItem.value,
+                      }),
+                    })}
+                  >
+                    {parsedItem.label}
+                  </div>
+                )
+              })
+            }
+            else {
             return <div className="RampInputSelect--dropdown-item">{loadingLabel}...</div>
+            }
           }
 
           if (items.length === 0) {
             return <div className="RampInputSelect--dropdown-item">No items</div>
           }
-
+          
           return items.map((item, index) => {
             const parsedItem = parseItem(item)
             return (
@@ -110,7 +134,7 @@ export function InputSelect<TItem>({
                 {parsedItem.label}
               </div>
             )
-          })
+          }) 
         }
       }}
     </Downshift>
