@@ -131,7 +131,7 @@ export function InputSelect<TItem>({
                   }),
                 })}
               >
-                {parsedItem.label}
+                {parsedItem.value}
               </div>
             )
           }) 

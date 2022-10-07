@@ -64,7 +64,7 @@ export function App() {
             if (newValue === null) {
               return
             }
-            else if (newValue.firstName === "All"){
+            else if (newValue.firstName === "All" &&newValue.lastName === "All"){
               loadAllTransactions()
             }
             else{
@@ -87,9 +87,9 @@ export function App() {
               </div>
               <button
                 className="RampButton"
-                disabled={paginatedTransactionsUtils.loading}
+                disabled={!paginatedTransactionsUtils.loading}
                 onClick={async () => {
-                  await loadAllTransactions()
+                  await loadAllTransactions();
                 }}
               >
                 View More

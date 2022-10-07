@@ -9,7 +9,7 @@ import {
 } from "./types"
 import mockData from "../mock-data.json"
 
-const TRANSACTIONS_PER_PAGE = 5
+const TRANSACTIONS_PER_PAGE = 10
 
 const data: { employees: Employee[]; transactions: Transaction[] } = {
   employees: mockData.employees,
@@ -36,7 +36,7 @@ export const getTransactionsPaginated = ({
 
   return {
     nextPage,
-    data: data.transactions.slice(0, end), 
+    data: data.transactions.slice(start, end),
   }
 }
 
