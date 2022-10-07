@@ -7,6 +7,7 @@ import { TransactionPaneComponent } from "./types"
 export const TransactionPane: TransactionPaneComponent = ({ transaction }) => {
   const [approved, setApproved] = useState(transaction.approved)
 
+
   const setTransactionApproval = useCallback(
     (newValue: boolean) => {
       fakeFetch<SuccessResponse>("setTransactionApproval", {
@@ -26,7 +27,7 @@ export const TransactionPane: TransactionPaneComponent = ({ transaction }) => {
           {transaction.employee.firstName} {transaction.employee.lastName} - {transaction.date}
         </p>
       </div>
-      <InputCheckbox id={transaction.id} checked={approved} onChange={setTransactionApproval} />
+        <InputCheckbox id={transaction.id} checked={approved} onChange={setTransactionApproval}   />
     </div>
   )
 }

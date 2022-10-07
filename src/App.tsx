@@ -36,7 +36,7 @@ export function App() {
     },
     [paginatedTransactionsUtils, transactionsByEmployeeUtils]
   )
-
+  
   useEffect(() => {
     if (employees === null && !employeeUtils.loading) {
       loadAllTransactions()
@@ -64,12 +64,16 @@ export function App() {
             if (newValue === null) {
               return
             }
-
-            await loadTransactionsByEmployee(newValue.id)
+            else if (newValue.firstName === "All"){
+              loadAllTransactions()
+            }
+            else{
+              await loadTransactionsByEmployee(newValue.id)
+            }
           }}
         />
 
-        <div className="RampBreak--l" />
+        <div className="RampBreak--l"/>
 
         <div className="RampGrid">
           {transactions === null ? (
