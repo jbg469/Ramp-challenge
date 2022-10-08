@@ -114,7 +114,7 @@ export function InputSelect<TItem>({
           if (items.length === 0) {
             return <div className="RampInputSelect--dropdown-item">No items</div>
           }
-          
+
           return items.map((item, index) => {
             const parsedItem = parseItem(item)
             return (
@@ -131,10 +131,10 @@ export function InputSelect<TItem>({
                   }),
                 })}
               >
-                {parsedItem.value}
+                {parsedItem.label}
               </div>
             )
-          }) 
+          })
         }
       }}
     </Downshift>

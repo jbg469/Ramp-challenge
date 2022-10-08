@@ -36,16 +36,16 @@ export const getTransactionsPaginated = ({
 
   return {
     nextPage,
-    data: data.transactions.slice(start, end),
+    data: data.transactions.slice(0, end),
   }
 }
 
 export const getTransactionsByEmployee = ({ employeeId }: RequestByEmployeeParams) => {
- 
-    //throw new Error("Employee id cannot be empty")
- 
-  return data.transactions.filter((transaction) => transaction.employee.id === employeeId)
+  if (!employeeId) {
+    throw new Error("Employee id cannot be empty")
+  }
 
+  return data.transactions.filter((transaction) => transaction.employee.id === employeeId)
 }
 
 export const setTransactionApproval = ({

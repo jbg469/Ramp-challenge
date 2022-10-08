@@ -36,7 +36,7 @@ export function App() {
     },
     [paginatedTransactionsUtils, transactionsByEmployeeUtils]
   )
-  
+
   useEffect(() => {
     if (employees === null && !employeeUtils.loading) {
       loadAllTransactions()
@@ -73,7 +73,7 @@ export function App() {
           }}
         />
 
-        <div className="RampBreak--l"/>
+        <div className="RampBreak--l" />
 
         <div className="RampGrid">
           {transactions === null ? (
@@ -89,7 +89,7 @@ export function App() {
                 className="RampButton"
                 disabled={paginatedTransactionsUtils.loading ||  transactionsByEmployee?.length === 0 || paginatedTransactions?.nextPage === null}
                 onClick={async () => {
-                  await loadAllTransactions();
+                  await loadAllTransactions()
                 }}
               >
                 View More

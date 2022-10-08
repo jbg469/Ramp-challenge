@@ -137,7 +137,7 @@ hr.RampBreak--l {
   cursor: pointer;
 }
 
-.RampInputCheckbox--label-checked:before{
+.RampInputCheckbox--label-checked:before {
   content: " ";
   width: 100%;
   height: 100%;

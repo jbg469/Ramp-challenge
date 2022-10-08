@@ -26,7 +26,6 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
             return response
           }
 
-          
           return { data: response.data, nextPage: response.nextPage }
         })
       }),
