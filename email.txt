@@ -1,3 +1,2 @@
 jbg469@nyu.edu
 
-Unfortunately I accidentally erased something and now the first name and last name do not show up in the drop down but only employee id does. This creates a new bug that leaves blank the All employees slot.
