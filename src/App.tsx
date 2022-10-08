@@ -90,6 +90,8 @@ export function App() {
                 disabled={paginatedTransactionsUtils.loading ||  transactionsByEmployee?.length === 0 || paginatedTransactions?.nextPage === null}
                 onClick={async () => {
                   await loadAllTransactions()
+                  //to fix last bug have to loadtrasactions by employee
+                  
                 }}
               >
                 View More
