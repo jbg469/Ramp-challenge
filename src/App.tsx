@@ -72,7 +72,7 @@ export function App() {
             if (newValue === null) {
               return
             }
-            else if (newValue.firstName === "All" && newValue.lastName === "Employees"){
+            else if (newValue.firstName === "All" && newValue.lastName === "Employees" && newValue.id === ""){
               loadAllTransactions();
              
             

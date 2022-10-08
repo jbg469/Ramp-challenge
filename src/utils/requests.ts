@@ -22,6 +22,9 @@ export const getTransactionsPaginated = ({
   page,
 }: PaginatedRequestParams): PaginatedResponse<Transaction[]> => {
 
+  if (page === null)
+   {throw new Error("Invalid page")}
+
   const start = page * TRANSACTIONS_PER_PAGE
   const end = start + TRANSACTIONS_PER_PAGE
 
